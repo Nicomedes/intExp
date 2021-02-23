@@ -44,236 +44,265 @@ define(['N/record'],
         const post = (requestBody) => {
 
             const RECEIVED = 1;
+            
+            let requestbodyArray = requestBody;
+            let responseArray = [];
 
-            let recIntegracao = record.create({
-                type: 'customrecord_intexp_expense'
+            requestbodyArray.forEach(expense => {
+
+                try {
+
+                    let recIntegracao = record.create({
+                        type: 'customrecord_intexp_expense'
+                    });
+    
+                    log.debug({
+                        title: "object",
+                        details: expense
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_centrodecusto',
+                        value: expense.centrodecusto
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_cpf',
+                        value: expense.cpf
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_cpfusuariolancamentode',
+                        value: expense.cpfusuariolancamentodespesa
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_datadespesa',
+                        value: expense.datadespesa
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_datadespesaaprovacao',
+                        value: expense.datadespesaaprovacao
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_datadespesaaprovacaofo',
+                        value: expense.datadespesaaprovacaoformatada
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_datadespesaformatada',
+                        value: expense.datadespesaformatada
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_dataenviodespesaaprova',
+                        value: expense.dataenviodespesaaprovacao
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_dataenviodespesaaprfor',
+                        value: expense.dataenviodespesaaprovacaoformatada
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_datainicialpercursokm',
+                        value: expense.datainicialpercursokm
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_datalancamentodespesa',
+                        value: expense.datalancamentodespesa
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_datalancamentodespesaf',
+                        value: expense.datalancamentodespesaformatada
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_descrelatoriodespesa',
+                        value: expense.descrelatoriodespesa
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_despesapaga',
+                        value: expense.despesapaga
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_distanciakm',
+                        value: expense.distanciakm
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_iddespesa',
+                        value: expense.iddespesa
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_idformapagamento',
+                        value: expense.idformapagamento
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_idrelatoriodespesa',
+                        value: expense.idrelatoriodespesa
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_idstatusaprovacao',
+                        value: expense.idstatusaprovacao
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_idstatusaprovacaorelat',
+                        value: expense.idstatusaprovacaorelatorio
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_idtiporeembolso',
+                        value: expense.idtiporeembolso
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_idusuario',
+                        value: expense.idusuario
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_integrado',
+                        value: expense.integrado
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_localdestinokm',
+                        value: expense.localdestinokm
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_localdestinokmmanual',
+                        value: expense.localdestinokmmanual
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_localpartidakm',
+                        value: expense.localpartidakm
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_localpartidakmmanual',
+                        value: expense.localpartidakmmanual
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_moeda',
+                        value: expense.moeda
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_moedapadrao',
+                        value: expense.moedapadrao
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_nomecliente',
+                        value: expense.nomecliente
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_nomeusuario',
+                        value: expense.nomeusuario
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_nomeusuariolancamentod',
+                        value: expense.nomeusuariolancamentodespesa
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_numeroos',
+                        value: expense.numeroos
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_observacao',
+                        value: expense.observacao
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_observacaoaprovador',
+                        value: expense.observacaoaprovador
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_statusdespesa',
+                        value: expense.statusdespesa
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_tipodespesa',
+                        value: expense.tipodespesa
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_tiporeembolso',
+                        value: expense.tiporeembolso
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_urlimagemcomprovante',
+                        value: expense.urlimagemcomprovante
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_valoraprovadodespesa',
+                        value: expense.valoraprovadodespesa
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_valorconvetidodespesa',
+                        value: expense.valorconvetidodespesa
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_valordespesa',
+                        value: expense.valordespesa
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_status',
+                        value: RECEIVED
+                    });
+    
+                    recIntegracao.setValue({
+                        fieldId: 'custrecord_intexp_json',
+                        value: expense
+                    });
+    
+                    responseArray.push(
+                        recIntegracao.save({
+                        enableSourcing: true
+                    })); 
+    
+                } catch (e) {
+    
+                    log.error({
+                        title: 'error',
+                        details: e
+                    });
+    
+                }
+                
             });
 
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_centrodecusto',
-                value: requestBody.centrodecusto
+            log.debug({
+                title: "Response Array",
+                details: responseArray
             });
 
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_cpf',
-                value: requestBody.cpf
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_cpfusuariolancamentode',
-                value: requestBody.cpfusuariolancamentodespesa
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_datadespesa',
-                value: requestBody.datadespesa
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_datadespesaaprovacao',
-                value: requestBody.datadespesaaprovacao
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_datadespesaaprovacaofo',
-                value: requestBody.datadespesaaprovacaoformatada
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_datadespesaformatada',
-                value: requestBody.datadespesaformatada
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_dataenviodespesaaprova',
-                value: requestBody.dataenviodespesaaprovacao
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_dataenviodespesaaprfor',
-                value: requestBody.dataenviodespesaaprovacaoformatada
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_datainicialpercursokm',
-                value: requestBody.datainicialpercursokm
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_datalancamentodespesa',
-                value: requestBody.datalancamentodespesa
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_datalancamentodespesaf',
-                value: requestBody.datalancamentodespesaformatada
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_descrelatoriodespesa',
-                value: requestBody.descrelatoriodespesa
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_despesapaga',
-                value: requestBody.despesapaga
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_distanciakm',
-                value: requestBody.distanciakm
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_iddespesa',
-                value: requestBody.iddespesa
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_idformapagamento',
-                value: requestBody.idformapagamento
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_idrelatoriodespesa',
-                value: requestBody.idrelatoriodespesa
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_idstatusaprovacao',
-                value: requestBody.idstatusaprovacao
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_idstatusaprovacaorelat',
-                value: requestBody.idstatusaprovacaorelatorio
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_idtiporeembolso',
-                value: requestBody.idtiporeembolso
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_idusuario',
-                value: requestBody.idusuario
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_integrado',
-                value: requestBody.integrado
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_localdestinokm',
-                value: requestBody.localdestinokm
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_localdestinokmmanual',
-                value: requestBody.localdestinokmmanual
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_localpartidakm',
-                value: requestBody.localpartidakm
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_localpartidakmmanual',
-                value: requestBody.localpartidakmmanual
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_moeda',
-                value: requestBody.moeda
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_moedapadrao',
-                value: requestBody.moedapadrao
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_nomecliente',
-                value: requestBody.nomecliente
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_nomeusuario',
-                value: requestBody.nomeusuario
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_nomeusuariolancamentod',
-                value: requestBody.nomeusuariolancamentodespesa
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_numeroos',
-                value: requestBody.numeroos
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_observacao',
-                value: requestBody.observacao
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_observacaoaprovador',
-                value: requestBody.observacaoaprovador
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_statusdespesa',
-                value: requestBody.statusdespesa
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_tipodespesa',
-                value: requestBody.tipodespesa
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_tiporeembolso',
-                value: requestBody.tiporeembolso
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_urlimagemcomprovante',
-                value: requestBody.urlimagemcomprovante
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_valoraprovadodespesa',
-                value: requestBody.valoraprovadodespesa
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_valorconvetidodespesa',
-                value: requestBody.valorconvetidodespesa
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_valordespesa',
-                value: requestBody.valordespesa
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_status',
-                value: RECEIVED
-            });
-
-            recIntegracao.setValue({
-                fieldId: 'custrecord_intexp_json',
-                value: requestBody
-            });
-
-            recIntegracao.save({
-                enableSourcing: true
-            })
-
-            return recIntegracao
+            return responseArray
         }
 
         /**
