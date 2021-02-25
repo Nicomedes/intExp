@@ -295,6 +295,7 @@ define(['N/record'],
     
                 }
                 
+                
             });
 
             // log.debug({
@@ -314,6 +315,24 @@ define(['N/record'],
          * @since 2015.2
          */
         const doDelete = (requestParams) => {
+
+            try{
+
+                var salesOrderRecord = record.delete({
+                    type: 'customrecord_intexp_expense',
+                    id: requestParams.id,
+                 });
+
+            } catch(e){
+
+                log.error({
+                    title: 'DELETE error',
+                    details: e
+                });
+
+            }
+
+            return String(requestParams.id)
 
         }
 
