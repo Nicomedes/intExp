@@ -56,10 +56,10 @@ define(['N/record'],
                         type: 'customrecord_intexp_expense'
                     });
     
-                    log.debug({
-                        title: "object",
-                        details: expense
-                    });
+                    // log.debug({
+                    //     title: "object",
+                    //     details: expense
+                    // });
     
                     recIntegracao.setValue({
                         fieldId: 'custrecord_intexp_centrodecusto',
@@ -297,10 +297,10 @@ define(['N/record'],
                 
             });
 
-            log.debug({
-                title: "Response Array",
-                details: responseArray
-            });
+            // log.debug({
+            //     title: "Response Array",
+            //     details: responseArray
+            // });
 
             return responseArray
         }
