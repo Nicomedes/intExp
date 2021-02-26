@@ -314,11 +314,11 @@ define(['N/record'],
          *     Object when request Content-Type is 'application/json' or 'application/xml'
          * @since 2015.2
          */
-        const doDelete = (requestParams) => {
+        const _delete = (requestParams) => {
 
             try{
 
-                var salesOrderRecord = record.delete({
+                var expenseIntegrationRecord = record.delete({
                     type: 'customrecord_intexp_expense',
                     id: requestParams.id,
                  });
@@ -332,7 +332,7 @@ define(['N/record'],
 
             }
 
-            return String(requestParams.id)
+            return requestParams.id
 
         }
 
@@ -340,7 +340,7 @@ define(['N/record'],
             get,
             put,
             post,
-            delete: doDelete
+            delete : _delete
         }
 
     });
