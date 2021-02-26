@@ -318,7 +318,7 @@ define(['N/record'],
 
             try{
 
-                var expenseIntegrationRecord = record.delete({
+                let expenseIntegrationRecord = record.delete({
                     type: 'customrecord_intexp_expense',
                     id: requestParams.id,
                  });
